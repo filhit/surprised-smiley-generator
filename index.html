@@ -57,7 +57,7 @@
 
             function go(e) {
                 var i,
-                    number = Number.parseInt(document.getElementById("count").value),
+                    number = parseInt(document.getElementById("count").value, 10),
                     output = [];
 
                 e.preventDefault();
