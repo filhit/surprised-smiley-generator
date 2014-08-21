@@ -1,2 +1,2 @@
-surprized-smiley-generator
+surprised-smiley-generator
 ==========================
