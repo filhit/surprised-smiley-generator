@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>J_J</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container">
+                <div class="inner cover">
+                    <h1 class="cover-heading">Suprized smiley generator!</h1>
+                    <form class="form-horizontal" role="form" id="form">
+                        <div class="form-group">
+                            <label for="count" class="col-sm-2 control-label">How much?</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="count" placeholder="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-default">Smile!</button>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="lead" id="output" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        (function () {
+            document.getElementById("form").onsubmit = go;
+
+            function go(e) {
+                var i,
+                    number = Number.parseInt(document.getElementById("count").value),
+                    output = [];
+
+                e.preventDefault();
+
+                if (!number) {
+                    number = 1;
+                }
+
+                if (number > 1000) {
+                    number = 1000;
+                }
+
+                for (i = 0; i < number; i++) {
+                    output.push(smiley());
+                }
+
+                document.getElementById("output").textContent = output.join(" ");
+
+                function eye() {
+                    var r = Math.random();
+                    if (r < 0.25) {
+                        return "o";
+                    } else if (r < 0.5) {
+                        return "O";
+                    } else if (r < 0.75) {
+                        return "0";
+                    } else {
+                        return "J";
+                    }
+                }
+
+                function smiley() {
+                    return eye() + "_" + eye();
+                }
+            }
+        })();
+    </script>
+</body>
+</html>
