@@ -75,27 +75,18 @@
                 }
 
                 document.getElementById("output").textContent = output.join(" ");
+				
+				function sample(array) {
+					var randomIndex = Math.floor(Math.random() * (array.length));
+					return array[randomIndex];
+				}
 
                 function eye() {
-                    var r = Math.random();
-                    if (r < 0.25) {
-                        return "o";
-                    } else if (r < 0.5) {
-                        return "O";
-                    } else if (r < 0.75) {
-                        return "0";
-                    } else {
-                        return "J";
-                    }
+                    return sample(["o", "O", "0"]);
                 }
 				
 				function nose() {
-					var r = Math.random();
-					if (r < 0.5) {
-						return "_";
-					} else {
-						return ".";
-					}
+					return sample(["_", "."]);
 				}
 
                 function smiley() {
