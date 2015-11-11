@@ -88,9 +88,18 @@
                         return "J";
                     }
                 }
+				
+				function nose() {
+					var r = Math.random();
+					if (r < 0.5) {
+						return "_";
+					} else {
+						return ".";
+					}
+				}
 
                 function smiley() {
-                    return eye() + "_" + eye();
+                    return eye() + nose() + eye();
                 }
             }
         })();
