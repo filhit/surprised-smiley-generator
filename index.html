@@ -75,23 +75,23 @@
                 }
 
                 document.getElementById("output").textContent = output.join(" ");
-				
-				function sample(array) {
-					var randomIndex = Math.floor(Math.random() * array.length);
-					return array[randomIndex];
-				}
 
-                function eye() {
+				function smiley() {
+                    return eye() + nose() + eye();
+                }
+				
+				function eye() {
                     return sample(["o", "O", "0"]);
                 }
 				
 				function nose() {
 					return sample(["_", "."]);
 				}
-
-                function smiley() {
-                    return eye() + nose() + eye();
-                }
+				
+				function sample(array) {
+					var randomIndex = Math.floor(Math.random() * array.length);
+					return array[randomIndex];
+				}
             }
         })();
     </script>
